@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Poppins',sans-serif;
+    font-weight: 800;
+}
+
+
+.inputText{
+    position: relative;
+    width: 50%;
+    margin-bottom: 25px;
+}
+
+.inputText input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    background: white;
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+
+.inputText span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.inputText input:valid ~ span,
+.inputText input:focus ~ span{
+    color: blueviolet;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: white;
+    border-left: 1px solid blueviolet;
+    border-right: 1px solid blueviolet;
+    letter-spacing: 0.2em;
+
+}
+
+.inputText input:valid ~ span,
+.inputText input:focus ~ span{
+    background: blueviolet;
+    color: white;
+    border-radius: 2px;
+}
+
+.inputText input:valid,
+.inputText input:focus{
+    border: 1px solid blueviolet;
+}
+
+input[type="radio"]{
+    display: none;
+}
+.inputRadio{
+    width: 150px;
+}
+.inputRadio label{
+    position: relative;
+    color: blueviolet;
+    font-size: 18px;
+    border: 2px solid blueviolet;
+    border-radius: 5px;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.inputRadio label::before{
+    position: absolute;
+    content: " ";
+    height: 20px;
+    width: 20px;
+    border: 3px solid blueviolet;
+    border-radius: 50%;
+    left: 10px;
+}
+
+input[type="radio"]:checked +label{
+    background-color: blueviolet;
+    color: white;
+}
+
+
+input[type="radio"]:checked +label::before{
+    background-color: blueviolet;
+    height: 20px;
+    width: 20px;
+    border: 5px solid white;
+}
+
+select{
+    display: block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 405px;
+    padding: 10px 20px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    background-color: blueviolet;
+    color: #ffffff;
+    border: 6px solid blueviolet;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: 47px;
+    background-position: 247px 0.5px;
+    outline: none;
+    box-shadow: 0 0 20px rgba(20,20,30,0.25);
+    margin-bottom: 25px;
+}
+select::-ms-expand{
+    display: none;
+}
+select:hover{
+    border: 6px solid blueviolet;
+}
+select option{
+    background-color: blueviolet;
+    letter-spacing: 1.2px;
+    font-weight: 400;
+    font-size: 18px;
+}
+.selected{
+    display: none;
+}
+
+
+#submit{
+    background: blueviolet;
+    color: white;
+    padding: 10px 20px;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Queue Simulation Form</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center" style="margin-top: -50px;">Queue Simulation Form</h1>
+        <form action="/simulate" method="post" novalidate>
+            <label>Select Queue Type:</label>
+            <div class="inputRadio">
+                <!-- <input  type="radio" name="queueType" value="0" id="fifoRadio" onclick="showFIFOOptions()">
+                <label  for="fifoRadio">FIFO</label> -->
+            </div>
+            <div class="inputRadio">
+                <input  type="radio" name="queueType" value="1" id="priorityRadio" onclick="showPriorityOptions()" checked>
+                <label  for="priorityRadio">Priority</label>
+            </div>
+            <br>
+            <!-- FIFO Options -->
+            <div class="options" id="fifoOptions" >
+                <div class="inputText">
+                    <input type="text" name="arrivalMean" required>
+                    <span>Arrival Mean</span>
+                </div>
+                <div class="inputText">
+                    <input type="text" name="serviceMean" required>
+                    <span>Service Mean</span>
+                </div>
+                <div class="inputText">
+                    <input type="text" name="num_of_servers" required>
+                    <span>No. of Servers</span>
+                </div>
+                <div>
+                    <label>Arrival Distribution:</label>
+                    <select  name="interarrivalDistribution">
+                        <option value="Poisson">Poisson Distribution</option>
+                        <option value="Exponential">Exponential Distribution</option>
+                        <option value="Custom">Custom Distribution</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Service Distribution:</label>
+                    <select name="serviceDistribution">
+                        <option value="Poisson">Poisson Distribution</option>
+                        <option value="Exponential">Exponential Distribution</option>
+                        <option value="Custom">Custom Distribution</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Priority Options -->
+            <div class="options" id="priorityOptions" style="display: none;">
+                       <!-- Priority Options -->
+            <!-- <p>A:</p>
+            <input type="text" name="a">
+            <p>C:</p>
+            <input type="text" name="c">
+            <p>M:</p>
+            <input type="text" name="m">
+            <p>Seed:</p>
+            <input type="text" name="seed"> -->
+            
+            <div class="inputText">
+                <input type="text" name="arrivalMean1" required>
+                <span>Arrival Mean</span>
+            </div>
+
+            <div class="inputText">
+                <input type="text" name="serviceMean1" required>
+                <span>Service Mean</span>
+            </div>
+            
+            
+            <div class="inputText">
+                <input type="text" name="num_of_servers1" required>
+                <span>No. of Servers</span>
+            </div>
+            
+            <div>
+                <p>Arrival Distribution:</p>
+                <select name="interarrivalDistributionPriority">
+                    <option value="Poisson">Poisson Distribution</option>
+                    <option value="Exponential">Exponential Distribution</option>
+                    <option value="Custom">Custom Distribution</option>
+                </select>
+                </div>
+    
+                <div>
+                <p>Service Distribution:</p>
+                <select name="serviceDistributionPriority">
+                    <option value="Poisson">Poisson Distribution</option>
+                    <option value="Exponential">Exponential Distribution</option>
+                    <option value="Custom">Custom Distribution</option>
+                </select>
+                </div>
+            
+        <div class="timescale">
+            <label>Time Scale:</label><br>
+
+            
+            <div class="inputRadio">
+                <input type="radio" id="min" name="time" value="min" checked>
+                <label for="min" >Minutes</label>
+            </div>
+            
+            <div class="inputRadio">
+                <input type="radio" id="hour" name="time" value="hour">
+                <label for="hour" >Hour</label>
+            </div>
+            
+            <div class="inputRadio">
+                <input type="radio" id="second" name="time" value="second">
+                <label for="second">Second</label>
+            </div>  
+        
+        </div>
+            
+            </div>
+
+            <button type="submit" id="submit" style="margin-top: 20px;" >Simulate</button>
+        </form>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery links here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function showFIFOOptions() {
+            document.getElementById('fifoOptions').style.display = 'block';
+            document.getElementById('priorityOptions').style.display = 'none';
+        }
+
+        function showPriorityOptions() {
+            document.getElementById('priorityOptions').style.display = 'block';
+            document.getElementById('fifoOptions').style.display = 'none';
+        }
+       
+    </script>
+</body>
+</html>

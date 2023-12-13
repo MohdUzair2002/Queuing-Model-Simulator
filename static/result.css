@@ -1,0 +1,337 @@
+/* Reset some default styles for better consistency */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1eded;
+}
+
+/* Style the header */
+h1 {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    margin: 0;
+}
+h2, h3, p{
+    text-align: center;
+}
+p{
+    color: rgb(151, 142, 152);
+    
+}
+
+/* Center the content */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+/* Style the table */
+table {
+    width: 99%;
+    border-collapse: collapse;
+    margin: 40px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    
+}
+.df_table{
+    width: 95%;
+   
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style the table header */
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Style alternating rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style the table cells */
+td {
+    vertical-align: middle;
+
+}
+
+/* Add some padding to the table */
+.container table {
+    margin-top: 20px;
+}
+
+/* .chart {
+    display: flex;
+    align-items: center;
+}
+
+.task {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+} */
+
+/* .chart {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.task {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    border: 1px solid #2980b9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+    position: relative;
+}
+
+.task span {
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+} */
+
+.server_head{
+    display: block;
+    max-width: 100%;
+    
+    
+    
+}
+
+.red-box{
+    width: 20px;
+    height: 20px; /* Set the height of the box */
+    background-color: #FF4233;
+    border: 1px solid black; 
+    margin-left: 560px;
+    margin-right: 15px;
+    margin-top: 15px;
+
+}
+.yellow-box{
+    width: 20px;
+    height: 20px; /* Set the height of the box */
+    background-color: #FFE433;
+    border: 1px solid black; 
+    margin-left: 560px;
+    margin-right: 15px;
+    margin-top: 15px;
+
+}
+.green-box{
+    width: 20px;
+    height: 20px; /* Set the height of the box */
+    background-color: #4FFF33;
+    border: 1px solid black; 
+    margin-left: 560px;
+    margin-right: 15px;
+    margin-top: 15px;
+
+}
+.red-box, .one{
+    display: flex;   
+}
+.yellow-box, .two{
+    display: flex;   
+}
+.green-box, .three, p{
+    display: flex;   
+    color: black;
+}
+
+
+
+.gantt-chart-container {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 15px;
+    inset-inline-end: none;
+}
+
+.gantt-chart-row {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Add a gap between server charts */
+}
+
+
+
+.gantt-chart-task-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+
+
+.gantt-chart-task {
+    background-color: aqua; 
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10vw; /* Adjust the width as needed */
+    max-width: 200px; /* Limit the maximum width */
+}
+
+.gantt-chart-task-timestamp{
+    
+    margin-top: 5px;
+    display: inline; 
+}
+.start-time {
+    border: 5px solid black;
+    border-width: 5px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    margin-right: 70px; /* Adjust the value as needed */
+
+}
+
+.end-time {
+    border: 1px solid black;
+    border-width: 4px;
+    border-radius: 5px ;
+    background-color: black;
+    color: white;
+  
+     /* Adjust the value as needed */
+    
+}
+
+
+.gantt-chart-task-label {
+    color: black;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+.su{
+    margin-top: 30px;
+    margin-bottom: -10px ;
+}
+
+.averages{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.av-label{
+    font-size: large;
+    font-weight: bold;
+    color: black;
+}
+
+.av-result{
+    font-size: medium;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #9f9898;
+}
+
+.av-label, .av-result{
+    display: inline-flex;
+}
+
+
+button#showAveragesButton, button#reloadButton{
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button#showAveragesButton:active, button#reloadButton:active{
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button#showAveragesButton{
+    padding: 0.25em 0.75em;
+  }
+}
+
+
+.hist_average{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.av-label{
+    font-size: large;
+    font-weight: bold;
+    color: black;
+}
+
+.av-result{
+    font-size: medium;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #9f9898;
+}
+
+.av-label, .av-result{
+    display: inline-flex;
+}
+
+/* Center the table on smaller screens */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    table {
+        width: 100%;
+    }
+}

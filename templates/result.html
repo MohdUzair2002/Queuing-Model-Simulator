@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulation Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">  
+</head>
+<br>
+    <h1>Simulation Result</h1>
+    <h2>Original Table:</h2>
+    <div class="df_table">
+    {{ df_table | safe }}
+    </div>
+<div class="graph" >
+    <div>
+    <h2>Arrival And Service</h2>
+    <img src="data:image/png;base64,{{ arrival_graph }}" alt="Bar Graph" style="width: 400px; height: 300px; margin-left: 18%;">
+    
+    <img src="data:image/png;base64,{{ service_graph }}" alt="Bar Graph"style="width: 400px; height: 300px; margin-left: 20px">
+    </div>
+    <h2 style="margin-bottom: -40px; margin-top: 60x;">Performance Measure</h2>
+    <img src="data:image/png;base64,{{ wait_graph }}" alt="Bar Graph" style="width: 400px; height: 300px; margin-left: 30px; margin-top: 5%;">
+    
+    <img src="data:image/png;base64,{{ turn_around_graph }}" alt="Bar Graph" style="width: 400px; height: 300px;margin-top: 5%">
+    
+    <img src="data:image/png;base64,{{ response_graph }}" alt="Bar Graph" style="width: 400px; height: 300px; margin-top: 5%">
+</div>
+
+<h2>Gantt-chart</h2>
+    <div class="one">
+        <div class="red-box"><p> </p></div>
+        <p>High Priority</p></div>
+    <div>
+    <div class="two">
+        <div class="yellow-box"><p> </p></div>
+        <p>Moderate Priority</p></div>
+    <div>
+    <div class="three">
+        <div class="green-box"><p> </p></div>
+        <p>Low Priority</p></div>
+    <div>
+    {% for server_final in servers %}
+    <div class="server_head"><h3>Server {{loop.index}}:</h3></div> <!-- This div creates a new line for each server heading -->
+    <div class="gantt-chart-container">
+        {% for task in server_final %}
+        <div class="gantt-chart-task" data-process="{{ task.process_name }}" data-index="{{ index }}" style="background-color: {{task.color}};">
+            <div class="gantt-chart-task-label">ID: {{ task.id }}</div>
+            <div class="gantt-chart-task-timestamp">
+                <span class="start-time">{{ task.start }}</span>
+                <span class="end-time">{{ task.end }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+
+
+    <h2 class="su">Server Utilization</h2>
+    <div class="df_table">
+        {{ server_utilization_table | safe }}
+        </div>
+
+    <h2>Averages</h2>   
+    <div class="averages">
+        {% for task in averages %}
+            <div class="av-task" data-process="{{ task.process_name }}" data-index="{{ loop.index0 }}" ;">
+                <div class="av-label">{{ task.name }}:</div>
+                <div class="av-result">
+                    {{ task.value }}
+                    {% if loop.index0 not in [4, 5] %}
+                        {{ time_scale }}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <button id="reloadButton" style="margin-left: 10%;">Replicate</button>
+
+
+    <button id="showAveragesButton" style="margin: 50px; margin-left: 25%; margin-top: -25px;">Compare</button>
+    <div class="hist_average" style="display: none;">
+        <h3>Count(s): {{page_count}}</h3>
+        <h2>Comparision Of Averages</h2>
+        
+        {% for task in hist_average %}
+        <div class="av-task" data-process="{{ task.process_name }}" data-index="{{ loop.index0 }}">
+            <div class="av-label">{{ task.name }}:</div>
+            <div class="av-result">
+                {{ task.value }}
+                {% if loop.index0 not in [4, 5] %}
+                    {{ time_scale }}
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+    
+    </div>
+    
+
+
+
+
+    <script>
+        document.getElementById("showAveragesButton").addEventListener("click", function () {
+        const averagesDiv = document.querySelector(".hist_average");
+        averagesDiv.style.display = averagesDiv.style.display === "none" ? "block" : "none";});
+
+        document.getElementById('reloadButton').addEventListener('click', function() {
+            location.reload();
+        })
+    </script>
+</body>
+</html>

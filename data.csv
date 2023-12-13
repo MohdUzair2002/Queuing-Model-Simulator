@@ -1,0 +1,5 @@
+a,s,n,Average Inter Arrival Time,Average Service Time,Average Turn Around Time (Ws),Average Wait Time (Wq),Length of system (Ls),Length of queue (Lq)
+0.5,20.0,3,1.1667,26.6667,30.8333,4.1667,10.2778,3.5714
+0.5,20.0,3,1.1667,31.5,34.8333,3.3333,16.0769,2.8571
+0.5,20.0,3,0.8333,13.8333,20.8333,7.0,5.0,8.4
+0.5,20.0,3,1.8333,24.1667,31.5,7.3333,9.45,4.0
